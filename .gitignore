@@ -1,0 +1,27 @@
+# Build output (never commit these; everyone builds their own)
+build/
+out/
+cmake-build-*/
+
+# IDE / editor folders
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Compiled files
+*.o
+*.obj
+*.exe
+*.pdb
+*.ilk
+*.a
+*.lib
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Benchmark output (results are generated when you run the program)
+results/*.csv
