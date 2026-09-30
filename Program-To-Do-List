@@ -1,0 +1,19 @@
+
+Program to do list
+
+1- Come up with a REALLY GOOD Name for the program. ?-hr
+
+2- Get a color sheme for the GUI 2-hr
+
+3- Setup: CMake, GLFW, GLAD, window, GPU timer queries, CSV output	8-hr
+
+4- Geometry tests	8-hr
+
+5- Bandwidth tests	8-hr
+
+
+6- Sweep automation, warm-up, statistics (avg, 1% low)	5-hr
+
+7- Running on 2–3 different machines, making graphs	5-hr
+
+8- Write-up / presentation	6-hr
