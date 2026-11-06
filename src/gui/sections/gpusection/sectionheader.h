@@ -7,9 +7,10 @@ class Header : public QWiddget{
     public:
         Header();
     private:
-        QString m_title;
-        QString description;
+        const QString m_title = "GPU Details";
+        const QString sectionIcon = "cpu";
+        const QString description = "Properties, performance, and test results.";
         QString gpu_name;
         QString vendorLogo;
-        QString sectionIcon;
+        
 }
