@@ -16,8 +16,8 @@ qt_standard_project_setup()
 
 qt_add_executable(test
     src/main.cpp
-    src/backend/device.cpp
-    src/backend/device.h
+    src/backend/devices/device.cpp
+    src/backend/devices/device.h
     src/backend/gpuscanner.cpp
     src/backend/gpuscanner.h
     src/gui/mainwindow/mainwindow.cpp
@@ -33,6 +33,7 @@ qt_add_executable(test
 
 target_include_directories(test PRIVATE
     src/backend
+    src/backend/devices
     src/gui/mainwindow
     src/gui/sidebar
     src/gui/sections
