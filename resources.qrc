@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="statistics">assets/icons/chart-column.svg</file>
+        <file alias="settings">assets/icons/settings.svg</file>
+        <file alias="gpu">assets/icons/gpu.svg</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="background">assets/images/background.png</file>
+        <file alias="gpuImage">assets/images/gpu.png</file>
+    </qresource>
+    <qresource prefix="/models">
+        <file alias="gpu-model">assets/models/graphics-card-with-fans.glb</file>
+    </qresource>
+</RCC>
