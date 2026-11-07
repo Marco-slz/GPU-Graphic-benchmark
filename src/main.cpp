@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
         "Sidebar QPushButton {background-color: rgb(169, 171, 173)}"
         "QLabel{color : rgb(241, 245, 249)}");
     MainWindow w;
+    w.showFullScreen();
     w.show();
 
 

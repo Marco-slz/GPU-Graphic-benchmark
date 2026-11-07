@@ -2,10 +2,11 @@
 
 #include<QtWidgets>
 #include <QPixmap>
-
+#include "imagelabel.h"
 class Header : public QWidget{
+    Q_OBJECT
     public:
-        Header(QString gpuName, QString vendorLogo);
+        Header(QString gpuName = "Graphics card 3000", QString vendorLogo = ":/images/nvidia");
     private:
         const QString m_title = "GPU Details";
         const QString m_sectionIcon = ":/icons/cpu";

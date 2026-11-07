@@ -1,35 +1,43 @@
 #include "sectionheader.h"
 
 
-Header::Header(QString gpuName, QString vendorLogo)
+Header::Header(QString gpuName , QString vendorLogo)
 : m_gpuName{gpuName}, m_vendorLogo{vendorLogo}{
+    setAttribute(Qt::WA_StyledBackground, true);
 
     auto* mainLayout = new QHBoxLayout(this);
     
     auto* rightLayout = new QVBoxLayout();
-    
     auto* leftLayout = new QVBoxLayout();
     
-
     auto *titleLabel = new QLabel(m_title);
+    titleLabel->setObjectName("titleLabel");
     auto *descriptionLabel = new QLabel(m_description);
+    descriptionLabel->setObjectName("descriptionLabel");
     auto *gpuNameLabel = new QLabel(m_gpuName);
+    gpuNameLabel->setObjectName("gpuNameLabel");
+    auto *sectionIcon = new ImageLabel(this);
+    sectionIcon->setImagePixmap(QPixmap(m_sectionIcon));
+    sectionIcon->setSizePolicy(
+    QSizePolicy::Minimum,
+    QSizePolicy::Minimum
+    );
+    auto *vendorLogoLabel = new ImageLabel();
+    vendorLogoLabel->setImagePixmap(QPixmap(m_vendorLogo));
 
-    auto *sectionIcon = new QLabel(this);
-    QPixmap icon(m_sectionIcon);
-    sectionIcon->setPixmap(icon);
+    mainLayout->addWidget(sectionIcon, 1  );
+    mainLayout->addLayout(leftLayout, 10);
+    mainLayout->setAlignment(leftLayout, Qt::AlignLeft);
+    mainLayout->addLayout(rightLayout, 1);
+    mainLayout->setAlignment(rightLayout, Qt::AlignRight);
 
-    auto *vendorLogoLabel = new QLabel();
-    QPixmap logo(m_vendorLogo);
-    vendorLogoLabel->setPixmap(logo);
+    leftLayout->addWidget(titleLabel, 1, Qt::AlignLeft | Qt::AlignTop);
+    leftLayout->addWidget(descriptionLabel, 2, Qt::AlignLeft | Qt::AlignTop);
+    
+    rightLayout->addWidget(vendorLogoLabel, 1, Qt::AlignRight | Qt::AlignTop);
+    rightLayout->addWidget(gpuNameLabel, 3, Qt::AlignRight | Qt::AlignTop);
 
-    mainLayout->addWidget(sectionIcon);
-    mainLayout->addLayout(rightLayout);
-
-    rightLayout->addWidget(titleLabel);
-    rightLayout->addWidget(descriptionLabel);
-    mainLayout->addLayout(leftLayout);
-
-    leftLayout->addWidget(vendorLogoLabel);
-    leftLayout->addWidget(gpuNameLabel);
+    this->setStyleSheet("#titleLabel { font-size: 40px}"
+    "#gpuNameLabel {font-size: 20px}"
+    "#descriptionLabel {font-size: 15px}"); 
 }

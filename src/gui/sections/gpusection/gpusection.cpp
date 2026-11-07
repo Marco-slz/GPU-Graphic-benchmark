@@ -4,30 +4,21 @@ GpuSection::GpuSection(QWidget *parent)
 : QWidget{parent}{
 
    
-    title = new QLabel();
-    title->setText("Title");
-
-
-    centralImage = new QLabel();
-    QPixmap gpuImage(":/images/gpuImage");
-    centralImage->setScaledContents(true);
-
-    centralImage->setPixmap(gpuImage);
-    centralImage->setMaximumSize(500, 400);
+    header = new Header();
+    header->setObjectName("header");
+    this->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+    this->setFixedHeight(150);
     
-    QLabel* leftBoard = new QLabel("TEXTO DE PRUEBA");
-    QLabel* rightBoard = new QLabel("TEXTO DE PRUEBA");
-
+    auto content = new QWidget();
+    content->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     mainLayout = new QVBoxLayout(this);
-    QHBoxLayout* contentLayout = new QHBoxLayout();
-    mainLayout->addWidget(title);  
-    mainLayout->addLayout(contentLayout, 1);
+    mainLayout->addWidget(header, 1);  
+    mainLayout->addWidget(content, 10);
+    this->setStyleSheet(
+    "Header#header{"
+    "background-color: rgba(58, 60, 63, 0.56);"
+    "border-width: 1px;"
+    "border-style: solid;"
+    "border-color: rgb(10, 81, 186);}");
 
-
-    contentLayout->addWidget(leftBoard,1);
-    contentLayout->addWidget(centralImage,1);
-    contentLayout->addWidget(rightBoard,1);
-    contentLayout->setAlignment(Qt::AlignCenter);
-    mainLayout->setAlignment(Qt::AlignCenter);
-    
 }

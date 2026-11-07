@@ -1,11 +1,12 @@
 #pragma once
 #include<QtWidgets>
 #include <QPixmap>
+#include "sectionheader.h"
 class GpuSection : public QWidget{
     public:
-        GpuSection(QWidget *parent = nullptr); //TODO: Define constructor
+        GpuSection(QWidget *parent = nullptr);
     private:
-        QLabel *title;
+        Header *header;
         QLabel *centralImage;
         QVBoxLayout *mainLayout;
 

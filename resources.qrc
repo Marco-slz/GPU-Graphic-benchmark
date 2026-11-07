@@ -8,6 +8,7 @@
     <qresource prefix="/images">
         <file alias="background">assets/images/background.png</file>
         <file alias="gpuImage">assets/images/gpu.png</file>
+        <file alias="nvidia">assets/images/nvidia-logo.png</file>
     </qresource>
     <qresource prefix="/models">
         <file alias="gpu-model">assets/models/graphics-card-with-fans.glb</file>

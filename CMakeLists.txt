@@ -22,6 +22,8 @@ qt_add_executable(test
     src/backend/gpuscanner.h
     src/gui/mainwindow/mainwindow.cpp
     src/gui/mainwindow/mainwindow.h
+    src/gui/imagelabel.cpp
+    src/gui/imagelabel.h
     src/gui/sidebar/sidebar.cpp
     src/gui/sidebar/sidebar.h
     src/gui/sections/sections.cpp
@@ -37,6 +39,7 @@ target_include_directories(test PRIVATE
     src/backend
     src/backend/devices
     src/gui/mainwindow
+    src/gui
     src/gui/sidebar
     src/gui/sections
     src/gui/sections/gpusection
