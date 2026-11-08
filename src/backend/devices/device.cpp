@@ -30,6 +30,8 @@ Gpu::Gpu(std::string make, std::string model, long long vramCapacity,
 int Device::get_id() const { return m_id; }
 std::string Device::get_make() const { return m_make; }
 std::string Device::get_model() const { return m_model; }
+std::string Device::get_vendor() const { return m_vendor; }
+
 long long Gpu::get_vramCapacity() const { return m_vramCapacity; }
 double Gpu::get_clockSpeed() const { return m_clockSpeed; }
 double Gpu::get_memoryBandwith() const { return m_memoryBandwith; }

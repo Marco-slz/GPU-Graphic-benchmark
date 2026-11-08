@@ -3,8 +3,7 @@
 #include <OPENCL/opencl.h>
 #include <string>
 #include <vector>
-// TODO: ADD VENDOR TO DEVICE
-//  Shared identity fields for hardware devices.
+
 class Device
 {
   public:
@@ -13,14 +12,14 @@ class Device
     int get_id() const;
     std::string get_make() const;
     std::string get_model() const;
-    // virtual double calculate_performance() = 0;
-    // virtual void findDevice() = 0;
+    std::string get_vendor() const;
 
   private:
     // properties
     int m_id;
     std::string m_make;
     std::string m_model;
+    std::string m_vendor;
 };
 // GPU model extending a device identity with graphics hardware specifications.
 class Gpu : public Device
