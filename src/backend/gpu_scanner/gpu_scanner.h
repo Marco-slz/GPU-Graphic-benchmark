@@ -8,6 +8,7 @@
 class GpuScanner : public Gpu{
     public:
         void scan();
+        Gpu operator [](int index);
     private:
         std::vector<Gpu> gpus;
 };

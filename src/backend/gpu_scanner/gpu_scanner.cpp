@@ -61,3 +61,7 @@ void GpuScanner::scan()
         // gpuClockSpeed;
     }
 }
+
+Gpu GpuScanner::operator [](int index){
+    return gpus[index];
+}
