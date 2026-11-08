@@ -30,6 +30,8 @@ qt_add_executable(test
     src/gui/sections/sections.h
     src/gui/sections/gpusection/gpusection.cpp
     src/gui/sections/gpusection/gpusection.h
+    src/gui/sections/gpusection/deviceoverview.cpp
+    src/gui/sections/gpusection/deviceoverview.h
     src/gui/sections/gpusection/sectionheader.cpp
     src/gui/sections/gpusection/sectionheader.h
     resources.qrc

@@ -1,8 +1,10 @@
+#pragma once
 #include <QtWidgets>
 #include<QPixmap>
 class ImageLabel : public QLabel{
     public:
         using QLabel::QLabel;
+
         void setImagePixmap(const QPixmap &pixmap){
             m_image = pixmap;
             updateImage();
