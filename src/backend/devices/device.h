@@ -1,8 +1,10 @@
+// Defines the common device model and the GPU-specific property model.
 #pragma once
 #include <OPENCL/opencl.h>
 #include <string>
 #include <vector>
-//TODO: ADD VENDOR TO DEVICE
+// TODO: ADD VENDOR TO DEVICE
+//  Shared identity fields for hardware devices.
 class Device
 {
   public:
@@ -11,8 +13,8 @@ class Device
     int get_id() const;
     std::string get_make() const;
     std::string get_model() const;
-    //virtual double calculate_performance() = 0;
-    //virtual void findDevice() = 0;
+    // virtual double calculate_performance() = 0;
+    // virtual void findDevice() = 0;
 
   private:
     // properties
@@ -20,6 +22,7 @@ class Device
     std::string m_make;
     std::string m_model;
 };
+// GPU model extending a device identity with graphics hardware specifications.
 class Gpu : public Device
 // TODO: Add remaining data members
 //       Add vector of tests of type Test
@@ -29,7 +32,7 @@ class Gpu : public Device
     Gpu(int id, std::string make, std::string model, long long vramCapacity,
         double clockSpeed, double memoryBandwith, double powerLimit);
     Gpu(std::string make, std::string model, long long vramCapacity,
-         double clockSpeed);
+        double clockSpeed);
     // getters.
     long long get_vramCapacity() const;
     double get_clockSpeed() const;
@@ -44,5 +47,3 @@ class Gpu : public Device
     double m_powerLimit;
     // TODO: add the remaining fields.
 };
-
-

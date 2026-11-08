@@ -1,10 +1,13 @@
 
-#include "mainwindow.h"
+// Application entry point: configure Qt, construct the main window, and run its
+// event loop.
 #include "gpuscanner.h"
+#include "mainwindow.h"
 #include <QtWidgets>
 
 int main(int argc, char *argv[])
 {
+    // Create the GUI application and apply the shared visual theme.
     QApplication a(argc, argv);
     a.setStyle("Fusion");
     qApp->setStyleSheet(
@@ -18,12 +21,11 @@ int main(int argc, char *argv[])
         // "border-width: 1px;"
         // "border-style: solid;"
         // "border-color: rgb(10, 81, 186);}"
-        );
+    );
+    // Display the application window and hand control to Qt's event loop.
     MainWindow w;
     w.showFullScreen();
     w.show();
 
-
     return a.exec();
-
 }

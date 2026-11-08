@@ -1,14 +1,17 @@
+// Declares the sidebar navigation widget and its section selection signal.
 #pragma once
 
-#include <QtWidgets>
 #include "sections.h"
+#include <QtWidgets>
+// Compact icon navigation that asks the main content to show a section.
 class Sidebar : public QWidget
 {
-  Q_OBJECT
+    Q_OBJECT
   public:
     Sidebar(QWidget *parent = nullptr);
   signals:
     void sectionRequested(int index);
+
   private:
     int width = 60;
     std::string color = "gray";

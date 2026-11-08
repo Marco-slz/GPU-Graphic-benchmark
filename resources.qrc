@@ -1,15 +1,19 @@
+<!-- Qt resources expose application artwork under stable runtime paths. -->
 <RCC>
+    <!-- Navigation icons used by the sidebar and GPU section. -->
     <qresource prefix="/icons">
         <file alias="statistics">assets/icons/chart-column.svg</file>
         <file alias="settings">assets/icons/settings.svg</file>
         <file alias="gpu">assets/icons/gpu.svg</file>
         <file alias="cpu">assets/icons/cpu.png</file>
     </qresource>
+    <!-- Images used as the window background and GPU/vendor artwork. -->
     <qresource prefix="/images">
         <file alias="background">assets/images/background.png</file>
         <file alias="nvidia">assets/images/nvidia-logo.png</file>
         <file alias="gpuImage">assets/images/Untitled design-5.png</file>
     </qresource>
+    <!-- Bundled 3D model assets. -->
     <qresource prefix="/models">
         <file alias="gpu-model">assets/models/graphics-card-with-fans.glb</file>
     </qresource>

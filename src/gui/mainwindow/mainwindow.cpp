@@ -1,9 +1,10 @@
+// Composes the central layout and connects navigation signals to section
+// changes.
 #include "mainwindow.h"
 
-
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
+    // Create the central area and place navigation beside the stacked content.
     auto *central = new QWidget(this);
     central->setObjectName("central");
     auto *layout = new QHBoxLayout(central);
@@ -16,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     layout->addWidget(sections, 1);
     setCentralWidget(central);
 
-    connect(sidebar, &Sidebar::sectionRequested, sections, &Sections::changeSection);
-
+    // Forward sidebar page requests to the stacked section container.
+    connect(sidebar, &Sidebar::sectionRequested, sections,
+            &Sections::changeSection);
 }
-
