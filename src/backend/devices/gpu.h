@@ -7,20 +7,20 @@ class Gpu : public Device
 //       Implement Test Class
 {
   public:
-    Gpu(int id, std::string make, std::string model, long long vramCapacity,
-        double clockSpeed, double memoryBandwith, double powerLimit);
-    Gpu(std::string make, std::string model, long long vramCapacity,
-        double clockSpeed);
+    Gpu(int id, std::string make, std::string model, unsigned long long vramCapacity,
+        unsigned long long clockSpeed, double memoryBandwith, double powerLimit);
+    Gpu(std::string make, std::string model, unsigned long long vramCapacity,
+        unsigned long long clockSpeed);
     // getters.
-    long long get_vramCapacity() const;
-    double get_clockSpeed() const;
+    unsigned long long get_vramCapacity() const;
+    unsigned long long get_clockSpeed() const;
     double get_memoryBandwith() const;
     double get_powerLimit() const;
     // setters.
   private:
     // properties
-    long long m_vramCapacity;
-    double m_clockSpeed;
+    unsigned long long m_vramCapacity;
+    unsigned long long m_clockSpeed;
     double m_memoryBandwith;
     double m_powerLimit;
     // TODO: add the remaining fields.

@@ -23,8 +23,8 @@ qt_add_executable(test
     src/backend/devices/device.h
     src/backend/devices/gpu.cpp
     src/backend/devices/gpu.h
-    src/backend/gpu_scanner.cpp
-    src/backend/gpu_scanner.h
+    src/backend/gpu_scanner/gpu_scanner.cpp
+    src/backend/gpu_scanner/gpu_scanner.h
     src/gui/main_window/main_window.cpp
     src/gui/main_window/main_window.h
     src/gui/image_label.cpp
@@ -46,6 +46,7 @@ qt_add_executable(test
 target_include_directories(test PRIVATE
     src/backend
     src/backend/devices
+    src/backend/gpu_scanner
     src/gui/main_window
     src/gui
     src/gui/sidebar

@@ -5,5 +5,11 @@
 #include <iostream>
 #include <vector>
 
+class GpuScanner : public Gpu{
+    public:
+        void scan();
+    private:
+        std::vector<Gpu> gpus;
+};
 // Return the GPUs found across all available OpenCL platforms.
-std::vector<Gpu> gpuScanner();
+
