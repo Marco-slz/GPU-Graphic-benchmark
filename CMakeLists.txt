@@ -23,22 +23,22 @@ qt_add_executable(test
     src/backend/devices/device.h
     src/backend/devices/gpu.cpp
     src/backend/devices/gpu.h
-    src/backend/gpuscanner.cpp
-    src/backend/gpuscanner.h
-    src/gui/mainwindow/mainwindow.cpp
-    src/gui/mainwindow/mainwindow.h
-    src/gui/imagelabel.cpp
-    src/gui/imagelabel.h
+    src/backend/gpu_scanner.cpp
+    src/backend/gpu_scanner.h
+    src/gui/main_window/main_window.cpp
+    src/gui/main_window/main_window.h
+    src/gui/image_label.cpp
+    src/gui/image_label.h
     src/gui/sidebar/sidebar.cpp
     src/gui/sidebar/sidebar.h
     src/gui/sections/sections.cpp
     src/gui/sections/sections.h
-    src/gui/sections/gpusection/gpusection.cpp
-    src/gui/sections/gpusection/gpusection.h
-    src/gui/sections/gpusection/deviceoverview.cpp
-    src/gui/sections/gpusection/deviceoverview.h
-    src/gui/sections/gpusection/sectionheader.cpp
-    src/gui/sections/gpusection/sectionheader.h
+    src/gui/sections/gpu_section/gpu_section.cpp
+    src/gui/sections/gpu_section/gpu_section.h
+    src/gui/sections/gpu_section/device_overview.cpp
+    src/gui/sections/gpu_section/device_overview.h
+    src/gui/sections/gpu_section/section_header.cpp
+    src/gui/sections/gpu_section/section_header.h
     resources.qrc
 )
 
@@ -46,11 +46,11 @@ qt_add_executable(test
 target_include_directories(test PRIVATE
     src/backend
     src/backend/devices
-    src/gui/mainwindow
+    src/gui/main_window
     src/gui
     src/gui/sidebar
     src/gui/sections
-    src/gui/sections/gpusection
+    src/gui/sections/gpu_section
 )
 
 # Link the GUI and GPU discovery dependencies into the executable.

@@ -1,18 +1,18 @@
 // Implements GPU enumeration and collection of basic device properties via
 // OpenCL.
-#include "gpuscanner.h"
+#include "gpu_scanner.h"
 std::vector<Gpu> gpuScanner()
 {
     // Gather devices across each OpenCL platform before reading their
     // properties.
     std::vector<Gpu> gpuSpecs;
     cl_uint pNumEntries = 0;
-    cl_uint num_platforms;
-    clGetPlatformIDs(0, NULL, &num_platforms);
+    cl_uint numPlatforms;
+    clGetPlatformIDs(0, NULL, &numPlatforms);
 
-    pNumEntries = num_platforms;
-    std::vector<cl_platform_id> platforms(num_platforms);
-    clGetPlatformIDs(num_platforms, platforms.data(), nullptr);
+    pNumEntries = numPlatforms;
+    std::vector<cl_platform_id> platforms(numPlatforms);
+    clGetPlatformIDs(numPlatforms, platforms.data(), nullptr);
     std::vector<cl_device_id> deviceIDs;
     // Query each platform for GPU devices and append them to the combined list.
     for (cl_uint i = 0; i < pNumEntries; i++)
@@ -32,16 +32,16 @@ std::vector<Gpu> gpuScanner()
     // Read the name, vendor, memory capacity, and maximum clock for each GPU.
     for (size_t i = 0; i < deviceIDs.size(); i++)
     {
-        size_t param_size;
-        clGetDeviceInfo(deviceIDs[i], CL_DEVICE_NAME, 0, nullptr, &param_size);
-        std::string name(param_size, '\0');
-        clGetDeviceInfo(deviceIDs[i], CL_DEVICE_NAME, param_size, name.data(),
+        size_t paramSize;
+        clGetDeviceInfo(deviceIDs[i], CL_DEVICE_NAME, 0, nullptr, &paramSize);
+        std::string name(paramSize, '\0');
+        clGetDeviceInfo(deviceIDs[i], CL_DEVICE_NAME, paramSize, name.data(),
                         nullptr);
         name.pop_back();
         clGetDeviceInfo(deviceIDs[i], CL_DEVICE_VENDOR, 0, nullptr,
-                        &param_size);
-        std::string vendor(param_size, '\0');
-        clGetDeviceInfo(deviceIDs[i], CL_DEVICE_VENDOR, param_size,
+                        &paramSize);
+        std::string vendor(paramSize, '\0');
+        clGetDeviceInfo(deviceIDs[i], CL_DEVICE_VENDOR, paramSize,
                         vendor.data(), nullptr);
         vendor.pop_back();
         cl_ulong vram;

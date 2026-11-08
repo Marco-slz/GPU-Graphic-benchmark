@@ -1,6 +1,6 @@
 // Composes the central layout and connects navigation signals to section
 // changes.
-#include "mainwindow.h"
+#include "main_window.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {

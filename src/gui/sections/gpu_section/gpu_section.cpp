@@ -1,5 +1,5 @@
 // Builds and styles the GPU section's header and overview panel.
-#include "gpusection.h"
+#include "gpu_section.h"
 
 GpuSection::GpuSection(QWidget *parent) : QWidget{parent}
 {

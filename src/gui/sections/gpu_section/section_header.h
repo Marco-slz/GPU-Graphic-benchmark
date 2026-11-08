@@ -1,7 +1,7 @@
 // Declares the heading widget for GPU details, including vendor branding.
 #pragma once
 
-#include "imagelabel.h"
+#include "image_label.h"
 #include <QPixmap>
 #include <QtWidgets>
 // Presents the section title, description, GPU name, and vendor logo.

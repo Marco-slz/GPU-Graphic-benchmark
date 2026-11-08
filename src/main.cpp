@@ -1,8 +1,8 @@
 
 // Application entry point: configure Qt, construct the main window, and run its
 // event loop.
-#include "gpuscanner.h"
-#include "mainwindow.h"
+#include "gpu_scanner.h"
+#include "main_window.h"
 #include <QtWidgets>
 
 int main(int argc, char *argv[])

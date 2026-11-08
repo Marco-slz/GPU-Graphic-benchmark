@@ -1,5 +1,5 @@
 // Builds the GPU overview panel from a title, image, and labeled fields.
-#include "deviceoverview.h"
+#include "device_overview.h"
 
 DeviceOverview::DeviceOverview()
 {

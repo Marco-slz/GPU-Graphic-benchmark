@@ -1,7 +1,7 @@
 // Declares the panel that presents a GPU image and basic device fields.
 #pragma once
 
-#include "imagelabel.h"
+#include "image_label.h"
 #include <QPixmap>
 #include <QtWidgets>
 

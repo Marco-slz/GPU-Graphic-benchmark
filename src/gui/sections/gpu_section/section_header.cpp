@@ -1,5 +1,5 @@
 // Builds the GPU details heading from labels, icons, and nested layouts.
-#include "sectionheader.h"
+#include "section_header.h"
 
 Header::Header(QString gpuName, QString vendorLogo)
     : m_gpuName{gpuName}, m_vendorLogo{vendorLogo}
