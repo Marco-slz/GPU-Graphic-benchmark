@@ -5,8 +5,9 @@
 #include <iostream>
 #include <vector>
 
-class GpuScanner : public Gpu{
+class GpuScanner{
     public:
+        GpuScanner();
         void scan();
         Gpu operator [](int index);
     private:

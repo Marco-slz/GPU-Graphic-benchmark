@@ -1,6 +1,11 @@
 // Implements GPU enumeration and collection of basic device properties via
 // OpenCL.
 #include "gpu_scanner.h"
+
+GpuScanner::GpuScanner(){
+    scan();
+}
+
 void GpuScanner::scan()
 {
     // Gather devices across each OpenCL platform before reading their
