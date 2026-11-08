@@ -21,6 +21,8 @@ qt_add_executable(test
     src/main.cpp
     src/backend/devices/device.cpp
     src/backend/devices/device.h
+    src/backend/devices/gpu.cpp
+    src/backend/devices/gpu.h
     src/backend/gpuscanner.cpp
     src/backend/gpuscanner.h
     src/gui/mainwindow/mainwindow.cpp

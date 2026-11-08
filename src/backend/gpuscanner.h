@@ -1,7 +1,7 @@
 // Declares the OpenCL-based GPU discovery function.
 #pragma once
 
-#include "device.h"
+#include "gpu.h"
 #include <iostream>
 #include <vector>
 
