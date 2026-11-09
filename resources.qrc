@@ -6,6 +6,7 @@
         <file alias="settings">assets/icons/settings.svg</file>
         <file alias="gpu">assets/icons/gpu.svg</file>
         <file alias="cpu">assets/icons/cpu.png</file>
+        <file alias="exit">assets/icons/exit.svg</file>
     </qresource>
     <!-- Images used as the window background and GPU/vendor artwork. -->
     <qresource prefix="/images">

@@ -11,9 +11,10 @@ class Sidebar : public QWidget
     Sidebar(QWidget *parent = nullptr);
   signals:
     void sectionRequested(int index);
+    void exitRequested();
 
   private:
-    int width = 60;
-    std::string color = "gray";
+    int width = 70;
+    std::string color = "grey";
     QPushButton *addButtons(const QString address, const QString label);
 };

@@ -18,6 +18,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
     setCentralWidget(central);
 
     // Forward sidebar page requests to the stacked section container.
-    connect(sidebar, &Sidebar::sectionRequested, sections,
-            &Sections::changeSection);
+    connect(sidebar, &Sidebar::sectionRequested, sections, &Sections::changeSection);
+    connect(sidebar, &Sidebar::exitRequested, this, &QWidget::close);
 }
