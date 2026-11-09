@@ -14,7 +14,7 @@ class Sidebar : public QWidget
     void exitRequested();
 
   private:
-    int width = 70;
-    std::string color = "grey";
+    int width = 60;
+    std::string color = "gray";
     QPushButton *addButtons(const QString address, const QString label);
 };
