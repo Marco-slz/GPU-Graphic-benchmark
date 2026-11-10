@@ -4,6 +4,7 @@
 #include "gpu.h"
 #include <iostream>
 #include <vector>
+#include <stdexcept>
 
 class GpuScanner{
     public:
