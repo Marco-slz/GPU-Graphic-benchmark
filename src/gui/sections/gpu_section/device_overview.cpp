@@ -17,7 +17,7 @@ DeviceOverview::DeviceOverview()
     // Lay out placeholder values beside the core GPU specification labels.
     QFormLayout *formLayout = new QFormLayout(this);
     formLayout->setAlignment(Qt::AlignTop);
-    formLayout->addRow(tr("&Make:"), new QLabel(""));
+    formLayout->addRow(tr("&Vendor:"), new QLabel(""));
     formLayout->addRow(tr("&Model:"), new QLabel(""));
     formLayout->addRow(tr("&VRAM:"), new QLabel(""));
     formLayout->addRow(tr("&Base Clock:"), new QLabel(""));

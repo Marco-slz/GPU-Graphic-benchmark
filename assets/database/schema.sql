@@ -1,7 +1,6 @@
 CREATE TABLE IF NOT EXISTS devices(
     id INTEGER PRIMARY KEY,
     device_type TEXT NOT NULL CHECK(device_type in ('GPU')),
-    make INTEGER,
     model INTEGER,
     vendor INTEGER
 );
