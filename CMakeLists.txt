@@ -10,6 +10,7 @@ set(CMAKE_AUTORCC ON)
 # Locate the GUI toolkit and OpenCL runtime used by the application.
 find_package(Qt6 REQUIRED COMPONENTS 
     Widgets
+    Sql
 )
 find_package(OpenCL REQUIRED)
 
@@ -23,6 +24,8 @@ qt_add_executable(test
     src/backend/devices/device.h
     src/backend/devices/gpu.cpp
     src/backend/devices/gpu.h
+    src/backend/database_management/database_management.cpp
+    src/backend/database_management/database_management.h
     src/backend/gpu_scanner/gpu_scanner.cpp
     src/backend/gpu_scanner/gpu_scanner.h
     src/gui/main_window/main_window.cpp
@@ -46,6 +49,7 @@ qt_add_executable(test
 target_include_directories(test PRIVATE
     src/backend
     src/backend/devices
+    src/backend/database_management
     src/backend/gpu_scanner
     src/gui/main_window
     src/gui
@@ -57,6 +61,7 @@ target_include_directories(test PRIVATE
 # Link the GUI and GPU discovery dependencies into the executable.
 target_link_libraries(test PRIVATE 
     Qt${QT_VERSION_MAJOR}::Widgets
+    Qt6::Sql
     OpenCL::OpenCL
    )
 
