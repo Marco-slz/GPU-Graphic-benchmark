@@ -38,6 +38,8 @@ qt_add_executable(test
     src/gui/sections/sections.h
     src/gui/sections/gpu_section/gpu_section.cpp
     src/gui/sections/gpu_section/gpu_section.h
+    src/gui/sections/gpu_section/gpu_selector.cpp
+    src/gui/sections/gpu_section/gpu_selector.h
     src/gui/sections/gpu_section/device_overview.cpp
     src/gui/sections/gpu_section/device_overview.h
     src/gui/sections/gpu_section/section_header.cpp

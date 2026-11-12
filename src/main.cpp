@@ -10,7 +10,6 @@
 int main(int argc, char *argv[])
 {
     
-    std::cout << gpus[0].get_make();
     // Create the GUI application and apply the shared visual theme.
     QApplication a(argc, argv);
     a.setStyle("Fusion");

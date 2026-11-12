@@ -7,15 +7,18 @@ GpuSection::GpuSection(QWidget *parent) : QWidget{parent}
     // Create child panels and assign names used by the section stylesheet.
     header = new Header();
     header->setObjectName("header");
-    gpuOverview = new DeviceOverview();
-    gpuOverview->setObjectName("gpuOverview");
-    gpuOverview->setFixedWidth(500);
     header->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     header->setFixedHeight(150);
 
+    gpuOverview = new DeviceOverview();
+    gpuOverview->setObjectName("gpuOverview");
+    gpuOverview->setFixedWidth(500);
+    
+    gpuSelector = new GpuSelector(this);
+
     // Stack the header above the overview and define their visual boundaries.
     mainLayout = new QVBoxLayout(this);
-
+    mainLayout->addWidget(gpuSelector);
     mainLayout->addWidget(header);
     mainLayout->addWidget(gpuOverview);
     this->setStyleSheet("Header#header{"
