@@ -1,10 +1,11 @@
 // Creates the available content pages and selects a page when requested.
 #include "sections.h"
 
-Sections::Sections(QWidget *parent) : QStackedWidget{parent}
+Sections::Sections(Backend &backend, QWidget *parent)
+    : QStackedWidget{parent}, backend(backend)
 {
 
-    gpu = new GpuSection();
+    gpu = new GpuSection(backend);
     // Register the GPU page and a temporary placeholder page in the stack.
     QLabel *blank =
         new QLabel("this asodfasdjhfasdhkasdfkjasdhkuhadskhfasalsdhfaks");

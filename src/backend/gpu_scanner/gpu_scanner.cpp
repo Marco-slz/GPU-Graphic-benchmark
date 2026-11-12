@@ -103,3 +103,7 @@ void GpuScanner::scan()
 }
 
 Gpu GpuScanner::operator[](int index) { return gpus[index]; }
+
+std::vector<Gpu> GpuScanner::getGpus(){
+    return gpus;
+}

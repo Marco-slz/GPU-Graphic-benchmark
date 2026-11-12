@@ -2,7 +2,8 @@
 // changes.
 #include "main_window.h"
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
+MainWindow::MainWindow(Backend &backend, QWidget *parent)
+    : QMainWindow(parent), backend(backend)
 {
     // Create the central area and place navigation beside the stacked content.
     auto *central = new QWidget(this);
@@ -11,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
     sidebar = new Sidebar(central);
     sidebar->setObjectName("sidebar");
-    sections = new Sections(central);
+    sections = new Sections(backend, central);
 
     layout->addWidget(sidebar, 0);
     layout->addWidget(sections, 1);

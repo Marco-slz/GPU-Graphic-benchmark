@@ -3,7 +3,6 @@
 #include <QSqlQuery>
 #include <vector>
 #include "gpu.h"
-#include <iostream>
 class DatabaseManager{
     public:
         DatabaseManager();

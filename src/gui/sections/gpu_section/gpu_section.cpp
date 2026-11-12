@@ -1,7 +1,8 @@
 // Builds and styles the GPU section's header and overview panel.
 #include "gpu_section.h"
 
-GpuSection::GpuSection(QWidget *parent) : QWidget{parent}
+GpuSection::GpuSection(Backend &backend, QWidget *parent)
+    : QWidget{parent}, backend(backend)
 {
 
     // Create child panels and assign names used by the section stylesheet.
@@ -10,11 +11,11 @@ GpuSection::GpuSection(QWidget *parent) : QWidget{parent}
     header->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
     header->setFixedHeight(150);
 
-    gpuOverview = new DeviceOverview();
+    gpuOverview = new DeviceOverview(backend, this);
     gpuOverview->setObjectName("gpuOverview");
     gpuOverview->setFixedWidth(500);
     
-    gpuSelector = new GpuSelector(this);
+    gpuSelector = new GpuSelector(backend, this);
 
     // Stack the header above the overview and define their visual boundaries.
     mainLayout = new QVBoxLayout(this);
@@ -31,4 +32,7 @@ GpuSection::GpuSection(QWidget *parent) : QWidget{parent}
                         "border-width: 1px;"
                         "border-style: solid;"
                         "border-color: rgb(10, 81, 186);}");
+    
+
+    connect(gpuSelector, &GpuSelector::gpuRequested, gpuOverview, &DeviceOverview::updateValues);
 }

@@ -4,6 +4,7 @@
 #include "gpu_scanner.h"
 #include "main_window.h"
 #include "database_management.h"
+#include "backend.h"
 #include <QtWidgets>
 #include<iostream>
 
@@ -12,6 +13,7 @@ int main(int argc, char *argv[])
     
     // Create the GUI application and apply the shared visual theme.
     QApplication a(argc, argv);
+    Backend backend;
     a.setStyle("Fusion");
     qApp->setStyleSheet(
         "* {border-radius: 4px}"
@@ -26,7 +28,7 @@ int main(int argc, char *argv[])
         "border-color: rgb(10, 81, 186);}"
     );
     // Display the application window and hand control to Qt's event loop.
-    MainWindow w;
+    MainWindow w(backend);
     w.showFullScreen();
     w.show();
 

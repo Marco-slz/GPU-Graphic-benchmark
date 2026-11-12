@@ -11,6 +11,7 @@ class GpuScanner{
         GpuScanner();
         void scan();
         Gpu operator [](int index);
+        std::vector<Gpu> getGpus();
     private:
         std::vector<Gpu> gpus;
 };

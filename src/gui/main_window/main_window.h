@@ -2,6 +2,7 @@
 #pragma once
 
 #include "sections.h"
+#include "backend.h"
 #include "sidebar.h"
 #include <QtWidgets>
 
@@ -9,8 +10,9 @@
 class MainWindow : public QMainWindow
 {
   public:
-    explicit MainWindow(QWidget *parent = nullptr);
+      MainWindow(Backend &backend, QWidget *parent = nullptr);
   private:
+    Backend &backend;
     Sidebar *sidebar;
     Sections *sections;
 };

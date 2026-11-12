@@ -3,6 +3,7 @@
 #include "device_overview.h"
 #include "gpu_selector.h"
 #include "section_header.h"
+#include "backend.h"
 #include <QPixmap>
 #include <QtWidgets>
 
@@ -10,9 +11,10 @@
 class GpuSection : public QWidget
 {
   public:
-    GpuSection(QWidget *parent = nullptr);
+    GpuSection(Backend &backend, QWidget *parent = nullptr);
 
   private:
+    Backend &backend;
     Header *header;
     DeviceOverview *gpuOverview;
     QLabel *centralImage;

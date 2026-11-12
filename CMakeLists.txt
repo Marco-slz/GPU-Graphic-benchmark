@@ -26,6 +26,8 @@ qt_add_executable(test
     src/backend/devices/gpu.h
     src/backend/database_management/database_management.cpp
     src/backend/database_management/database_management.h
+    src/backend/backend.cpp
+    src/backend/backend.h
     src/backend/gpu_scanner/gpu_scanner.cpp
     src/backend/gpu_scanner/gpu_scanner.h
     src/gui/main_window/main_window.cpp
