@@ -21,11 +21,11 @@ int main(int argc, char *argv[])
         "Sidebar#sidebar {background-color: rgba(58, 60, 63, 0.56)}"
         "Sidebar QPushButton {background-color: rgb(169, 171, 173)}"
         "QLabel{color : rgb(241, 245, 249)}"
-        "*{"
-        "background-color: rgba(58, 60, 63, 0.56);"
-        "border-width: 1px;"
-        "border-style: solid;"
-        "border-color: rgb(10, 81, 186);}"
+        // "*{"
+        // "background-color: rgba(58, 60, 63, 0.56);"
+        // "border-width: 1px;"
+        // "border-style: solid;"
+        // "border-color: rgb(10, 81, 186);}"
     );
     // Display the application window and hand control to Qt's event loop.
     MainWindow w(backend);
