@@ -8,7 +8,10 @@ GpuSelector::GpuSelector(Backend &backend, QWidget *parent)
     auto *scanButton = addButton("Scan");
 
     auto *scrollArea = new QScrollArea();
-    scrollArea->setBackgroundRole(QPalette::Dark);
+    //scrollArea->setBackgroundRole(QPalette::Dark);
+    scrollArea->setStyleSheet("background: transparent; border: none;");    
+    scrollArea->viewport()->setStyleSheet("background: transparent;");
+
     scrollArea->setWidgetResizable(true);
     scrollArea->setWidget(innerArea);
 
