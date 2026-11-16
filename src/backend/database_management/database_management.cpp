@@ -6,7 +6,7 @@ DatabaseManager::DatabaseManager()
     db = QSqlDatabase::addDatabase("QSQLITE");
 
     db.setDatabaseName("assets/database/database.db");
-    
+
     db.open();
 }
 
@@ -19,7 +19,14 @@ void DatabaseManager::storeGpu(Gpu gpu)
     query.bindValue(":device_type", "GPU");
     query.bindValue(":model", QString::fromStdString(gpu.get_model()));
     query.bindValue(":vendor", QString::fromStdString(gpu.get_vendor()));
+    query.exec();
 
+    query.prepare("INSERT INTO gpu_properties(device_id, clock_speed, vram_capacity) "
+                  "VALUES(:device_id, :clock_speed, :vram_capacity)");
+    const QVariant device_id = query.lastInsertId();
+    query.bindValue(":device_id", device_id);
+    query.bindValue(":clock_speed", gpu.get_clockSpeed());
+    query.bindValue(":vram_capacity", gpu.get_vramCapacity());
     query.exec();
 }
 

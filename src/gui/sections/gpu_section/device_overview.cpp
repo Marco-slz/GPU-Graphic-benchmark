@@ -39,4 +39,6 @@ void DeviceOverview::updateValues(int gpuPosition){
     std::vector<Gpu> AvailableGpus = backend.getAvailableGpus();
     vendor->setText(QString::fromStdString(AvailableGpus[gpuPosition].get_vendor()));
     model->setText(QString::fromStdString(AvailableGpus[gpuPosition].get_model()));
+    vram->setText(QString::number(AvailableGpus[gpuPosition].get_vramCapacity() / (1024.0 * 1024 * 1024)) + " GiB");
+    baseClock->setText(QString::number(AvailableGpus[gpuPosition].get_clockSpeed() / 1000.0) + " GHz");
 }
