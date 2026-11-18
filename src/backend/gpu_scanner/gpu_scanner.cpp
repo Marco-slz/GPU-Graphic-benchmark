@@ -64,12 +64,12 @@ void GpuScanner::scan()
         }
         std::string gpuModel(paramSize, '\0');
         success = clGetDeviceInfo(deviceIDs[i], CL_DEVICE_NAME, paramSize,
-                                 gpuModel.data(), nullptr);
+                                  gpuModel.data(), nullptr);
         if (success != CL_SUCCESS)
         {
             throw std::runtime_error("Failed to retrieve OpenCL platforms.");
         }
-     gpuModel.pop_back();
+        gpuModel.pop_back();
         success = clGetDeviceInfo(deviceIDs[i], CL_DEVICE_VENDOR, 0, nullptr,
                                   &paramSize);
         if (success != CL_SUCCESS)
@@ -98,12 +98,17 @@ void GpuScanner::scan()
         {
             throw std::runtime_error("Failed to retrieve OpenCL platforms.");
         }
-        gpus.push_back( {gpuModel, gpuVendor, vram, clockSpeed});
+        cl_bool unified;
+        success = clGetDeviceInfo(deviceIDs[i], CL_DEVICE_HOST_UNIFIED_MEMORY, sizeof(unified),
+                        &unified, NULL);
+        if (success != CL_SUCCESS)
+        {
+            throw std::runtime_error("Failed to retrieve OpenCL platforms.");
+        }
+        gpus.push_back({gpuModel, gpuVendor, (unified == CL_TRUE), vram, clockSpeed});
     }
 }
 
 Gpu GpuScanner::operator[](int index) { return gpus[index]; }
 
-std::vector<Gpu> GpuScanner::getGpus(){
-    return gpus;
-}
+std::vector<Gpu> GpuScanner::getGpus() { return gpus; }

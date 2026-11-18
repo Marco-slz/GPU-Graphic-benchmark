@@ -21,4 +21,5 @@ class DeviceOverview : public QWidget
     QLabel* vendor;
     QLabel* vram;
     QLabel* baseClock;
+    QLabel* unifiedMemory;
 };

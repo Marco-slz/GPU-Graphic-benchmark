@@ -9,5 +9,6 @@ class DatabaseManager{
         void storeGpu(Gpu gpu);
        std::vector <Gpu> getGpus();
     private:
+       bool initializeDatabase();
        QSqlDatabase db;
 };

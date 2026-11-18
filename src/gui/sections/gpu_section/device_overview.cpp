@@ -20,6 +20,7 @@ DeviceOverview::DeviceOverview(Backend &backend, QWidget *parent)
     vendor = new QLabel("");
     vram = new QLabel("");
     baseClock = new QLabel("");
+    unifiedMemory = new QLabel("");
     // Lay out placeholder values beside the core GPU specification labels.
     QFormLayout *formLayout = new QFormLayout(this);
     formLayout->setAlignment(Qt::AlignTop);
@@ -27,6 +28,7 @@ DeviceOverview::DeviceOverview(Backend &backend, QWidget *parent)
     formLayout->addRow(tr("&Model:"), model);
     formLayout->addRow(tr("&VRAM:"), vram);
     formLayout->addRow(tr("&Base Clock:"), baseClock);
+    formLayout->addRow(tr("&Unified Memory:"), unifiedMemory);
 
     mainLayout->addWidget(titleLabel, 1, Qt::AlignTop);
     mainLayout->addWidget(gpuImage, 20, Qt::AlignTop);
@@ -41,4 +43,5 @@ void DeviceOverview::updateValues(int gpuPosition){
     model->setText(QString::fromStdString(AvailableGpus[gpuPosition].get_model()));
     vram->setText(QString::number(AvailableGpus[gpuPosition].get_vramCapacity() / (1024.0 * 1024 * 1024)) + " GiB");
     baseClock->setText(QString::number(AvailableGpus[gpuPosition].get_clockSpeed() / 1000.0) + " GHz");
+    unifiedMemory->setText(AvailableGpus[gpuPosition].get_unifiedMemory() ? "TRUE" : "FALSE");
 }

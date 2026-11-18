@@ -3,6 +3,7 @@ CREATE TABLE IF NOT EXISTS devices(
     device_type TEXT NOT NULL CHECK(device_type in ('GPU')),
     model INTEGER,
     vendor INTEGER
+
 );
 
 CREATE TABLE IF NOT EXISTS gpu_properties(
@@ -10,6 +11,7 @@ CREATE TABLE IF NOT EXISTS gpu_properties(
     device_id INTEGER UNIQUE,
     clock_speed NUMERIC,
     vram_capacity NUMERIC,
+    unified INTEGER NOT NULL DEFAULT 0,
 
     FOREIGN KEY(device_id) REFERENCES devices(id)
 );
